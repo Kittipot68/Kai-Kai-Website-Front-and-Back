@@ -1,0 +1,748 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700"); */
+
+@font-face {
+  font-family: "PSL369Pro";
+  src: url("../PSL369Pro.otf") format("truetype");
+}
+/* Default styles for html and body */
+html, body {
+  /* Your default styles here */
+  margin: 0;
+  padding: 0;
+  min-width: 330px; /* Set the minimum width to 330 pixels */
+}
+
+/* Media query for screens with a maximum width of 330 pixels */
+@media (max-width: 330px) {
+  html, body {
+    /* Additional styles for screens up to 330 pixels */
+    /* For example: font-size, background-color, etc. */
+  }
+}
+
+body {
+  font-family: "PSL369Pro";
+}
+
+/* h1 {
+  font-size: 2em; 
+}
+
+p {
+  font-size: 1.2em; 
+}
+
+blockquote{
+  font-size: 3em; 
+
+}
+a{
+  font-size: 30px;
+} */
+
+/* body {
+} */
+
+/* In component-specific styles for other pages */
+/* .pageContainer {
+  font-family: 'PSL001pro';
+} */
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Initial background color with reduced opacity */
+  z-index: 1000; /* Ensure the navigation bar is on top of other content */
+}
+
+.carousel .control-arrow {
+  font-size: 36px; /* Increase the font size to make arrows larger */
+  color: #ff0000; /* Change the arrow color */
+}
+
+/* Add hover effect to arrows */
+.carousel .control-arrow:hover {
+  color: #00ff00; /* Change the arrow color on hover */
+}
+
+/* Custom CSS to style indicators (dots) */
+/* You can adjust the values as needed */
+
+/* Increase indicator size */
+.carousel .slider-wrapper .slider .dot {
+  width: 16px; /* Increase the width of the dots */
+  height: 16px; /* Increase the height of the dots */
+  background-color: #ff0000; /* Change the dot color */
+  border: 2px solid #000; /* Add a border to the dots */
+  border-radius: 50%; /* Make the dots circular */
+  margin: 0 5px; /* Adjust the margin between dots */
+}
+
+/* Add hover effect to indicators */
+.carousel .slider-wrapper .slider .dot:hover {
+  background-color: #00ff00; /* Change the dot color on hover */
+}
+
+/* burger menu */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 50px;
+  height: 45px;
+  position: relative;
+  margin: 10;
+  transition: 0.5s ease-in-out;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 58.4px;
+  background: #ea5656;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon4 span {
+  transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(1) { top: 5px; width: 58.4px; height: 8px; }
+#nav-icon4 span:nth-child(2) { top: 20px; height: 8px; width: 40px; }
+#nav-icon4 span:nth-child(3) { top: 35px; height: 8px; width: 58.4px; }
+
+#nav-icon4.open span:nth-child(1) { transform: rotate(45deg); top: -3px; left: 8px; }
+#nav-icon4.open span:nth-child(2) { width: 0%; opacity: 0; }
+#nav-icon4.open span:nth-child(3) { transform: rotate(-45deg); top: 39px; left: 8px; }
+
+/* Other elements using Open Sans */
+/* h1,
+h2,
+p {
+  font-family: "Open Sans", sans-serif;
+} */
+
+/* Your existing CSS styles */
+
+/* Set a minimum width and height for the viewport */
+
+/* Add your custom arrow styles here */
+.carousel-root .control-arrow {
+}
+
+.carousel-root .control-arrow:hover {
+  opacity: 1; /* Change opacity on hover */
+}
+
+.ltr {
+  text-align: left;
+}
+
+.rtl {
+  text-align: right;
+}
+
+.editor-placeholder {
+  color: #999;
+  overflow: hidden;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.editor-paragraph {
+  margin: 0 0 15px 0;
+  position: relative;
+}
+
+/* custom-styles.css */
+.sun-editor-no-toolbar .sun-editor-toolbar {
+  display: none;
+}
+
+/* In your CSS file or stylesheet */
+.hidden-border-sun-editor {
+  border: none;
+  box-shadow: none;
+  /* Add other styles if needed */
+}
+.sun-editor {
+  border: none;
+}
+
+.sun-editor .se-resizing-bar {
+  display: none;
+}
+
+/* .fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.lazy-load-visible {
+  opacity: 1;
+}
+
+.lazy-image {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-load-visible .lazy-image {
+  opacity: 1;
+} */
+
+/* Add this CSS to your component's stylesheet */
+.fade-in-content {
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.5s; /* Use a transition for smooth fade-in */
+}
+
+.fade-in-content.show {
+  opacity: 1; /* When the 'show' class is applied, opacity becomes 1 */
+}
+
+/* Define initial hidden styles */
+.hidden-content,
+.hidden-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Define visible styles */
+.visible-content,
+.visible-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden-test {
+  opacity: 0;
+  transition: all 3s;
+}
+
+.show-test {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cssanimation,
+.cssanimation span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span {
+  display: inline-block;
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInTop {
+  animation-name: fadeInTop;
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in-animation 0.5s ease both;
+  opacity: 0; /* Start with opacity 0 */
+}
+
+@keyframes slide-in-animation {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0; /* Start with opacity 0 */
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1; /* End with opacity 1 */
+  }
+}
+
+.slide-bottom {
+  animation: slide-in-from-bottom 0.5s ease both;
+  opacity: 0; /* Start with opacity 0 */
+}
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0; /* Start with opacity 0 */
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1; /* End with opacity 1 */
+  }
+}
+
+.hover-red:hover {
+  border: 1px solid red; /* You can customize the hover effect as per your preference */
+  /* Add any other styles you want to apply when hovering over the card */
+}
+
+.responsive-iframe-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.border-transition {
+  position: relative;
+  text-align: center;
+}
+
+.border-transition::before,
+.border-transition::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #dc2626; /* Change this to your desired border color */
+  transition: width 0.3s ease;
+}
+
+.border-transition::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.border-transition::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.border-transition:hover::before,
+.border-transition:hover::after {
+  width: 100%;
+}
+
+.product-description {
+  max-height: 80px; /* Adjust the height as needed */
+  overflow: auto;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: red;
+  
+}
+
+.custom-pagination .page-link {
+  font-size: 25px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  /* background-color: #dc3545; */
+  color: #000000;
+}
+
+.bg-shape {
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  margin-top: -70px; /* Adjust the margin-top value as needed */
+}
+
+.bg-shape:after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: red;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.5;
+  top: -60%; /* change value as required */
+  right: -20%; /* change value as required */
+}
+
+.hex {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  margin-top: -70px; /* Adjust the margin-top value as needed */
+}
+
+.hex:before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  height: 200px;
+  background: linear-gradient(
+    to bottom right,
+    #ff6363,
+    #f6f656
+  ); /* Gradient background */
+  opacity: 0.7;
+  z-index: -2;
+}
+
+
+/* Add a class for the slide-in animation */
+.slide-in {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Add a class for the slide-out animation */
+.slide-out {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.bg-slide.show {
+  transform: translateX(0);
+}
+
+
+.wave-background {
+  position: relative;
+  background-color: #3498db; /* Adjust the background color as needed */
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 150px; /* Adjust the height of the wave */
+  bottom: -1px;
+  left: 0;
+}
+
+.wave::before,
+.wave::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.wave::before {
+  bottom: 100%;
+  animation: wave-animation 1s infinite linear;
+}
+
+.wave::after {
+  bottom: 200%;
+  animation: wave-animation 1s infinite linear 0.5s;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.curve {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: hsl(216, 21%, 16%);
+}
+
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  padding-top: 100px;
+  background: #3c31dd;
+}
+
+
+.container-card {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0e0d12;
+  padding: 40px 8%;
+  display: grid;
+  align-items: center;
+}
+
+.container-card .movie-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-gap: 20px;
+}
+
+.movie-cards .card {
+  position: relative;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  border-width: 3px;
+  border-color: #ECECEC; /* Set the initial border color */
+
+  /* Transition effect for a smooth color change */
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Change the border color to red when the card is hovered over */
+.movie-cards .card:hover {
+  border-color: red;
+  border-radius: 10px;
+  border-width: 1px;
+
+}
+
+
+.card img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.card .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), #ff0000d7);
+  padding: 35% 4% 0 4%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.content .name {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.content .infos {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.content .short-desc {
+  font-size: 25px;
+  line-height: 1.1;
+  padding: 6px 0;
+}
+
+.content .icons a {
+  font-size: 18px;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.content .icons a i {
+  transition: all 0.5s;
+}
+
+.content .icons a:hover i {
+  transform: translateY(-2px);
+}
+
+.movie-cards .card:hover img {
+  transform: scale(1.05);
+}
+
+.movie-cards .card:hover .content {
+  opacity: 1;
+}
+
+/* @media (max-width: 560px) {
+  .card .content {
+    padding: 10% 4% 0 4%;
+  }
+
+  .content .name {
+    font-size: 35px;
+  }
+
+  .content .infos,
+  .content .short-desc {
+    font-size: 25px;
+  }
+} */
+
+
+.long-text {
+  max-height: 3em; /* Set the maximum height for three lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.long-text:hover {
+  max-height: none; /* Show the full text on hover */
+  overflow: visible;
+  white-space: normal;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+
+
+.gallery {
+  background: #EEE;
+  position: relative;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
