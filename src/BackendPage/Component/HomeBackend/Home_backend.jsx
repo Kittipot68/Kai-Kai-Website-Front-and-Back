@@ -362,13 +362,13 @@ function Home_backend() {
               <h3 className="text-lg font-semibold mb-2">รุปปัจจุบัน</h3>
               <div className="flex justify-center items-center">
 
-              <img
-  loading='lazy'
-  src={item.picture ? `https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}` : 'https://placehold.co/1900x800'}
-  className="mb-4 rounded-md"
-  style={{ width: '200px', height: '100px' }}
-  alt="Item Image"
-/>
+                <img
+                  loading='lazy'
+                  src={item.picture ? `https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}` : 'https://placehold.co/1900x800'}
+                  className="mb-4 rounded-md"
+                  style={{ width: '200px', height: '100px' }}
+                  alt="Item Image"
+                />
 
               </div>
 
@@ -470,7 +470,7 @@ function Home_backend() {
         </div>
       </div>
       {/* //////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
+      {/*  ส่วน mission vission
       <div className="mb-8 border-b border-gray-300 py-4 flex flex-wrap">
         <h2 className="text-2xl font-semibold w-full mb-4">Vision Mission</h2>
         {visionmissionData.map((item) => (
@@ -590,13 +590,14 @@ function Home_backend() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
 
       {/* //////////////////////////////////////////////////////////////////////////////////////////////////////// */}
 
       <div className="mb-8 border-b border-gray-300 py-4 flex flex-wrap">
         <h2 className="text-2xl font-semibold w-full mb-4">Introduction</h2>
+
         {introductionData.map((item) => (
           <div key={item.id} className="mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/10 p-1 mr-3">
             <div className=" flex-col justify-center text-center">
@@ -624,7 +625,7 @@ function Home_backend() {
               />
 
 
-              <h1 className={`${editid == item.id ? "hidden" : " w-full  border-gray-300 p-2"}`}>ข้อมูลภาษาอังกฤษ</h1>
+              {/* <h1 className={`${editid == item.id ? "hidden" : " w-full  border-gray-300 p-2"}`}>ข้อมูลภาษาอังกฤษ</h1>
 
               <input
                 value={item.content_en}
@@ -638,7 +639,7 @@ function Home_backend() {
                 disabled
                 rows={4} // Adjust the number of rows as needed
                 className={`${editid == item.id ? "hidden" : "cursor-not-allowed mt-2 w-full rounded-md border border-gray-300 p-2"}`}
-              />
+              /> */}
 
 
 

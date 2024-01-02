@@ -32,17 +32,15 @@ function ContactEach({ selectedCompany }) {
       const fetchedData = await response.json();
 
       // Map over the array and conditionally select content_en when selectedLanguage is 'en'
-      const place = selectedLanguage === 'en' ? fetchedData[0].place_en : fetchedData[0].place;
-      const tel = selectedLanguage === 'en' ? fetchedData[0].tel : fetchedData[0].tel;
-      const email = selectedLanguage === 'en' ? fetchedData[0].email : fetchedData[0].email;
+      const place = selectedLanguage === 'th' ? fetchedData[0].place : fetchedData[0].place_en;
+      const tel = selectedLanguage === 'th' ? fetchedData[0].tel : fetchedData[0].tel;
+      const email = selectedLanguage === 'th' ? fetchedData[0].email : fetchedData[0].email;
 
 
       setplace(place)
       settel(tel)
       setemail(email)
       setContactDetail(fetchedData[0]);
-
-
 
     } catch (error) {
       console.error('Error fetching data:', error);

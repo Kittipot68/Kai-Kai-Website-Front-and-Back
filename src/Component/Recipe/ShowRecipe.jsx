@@ -226,7 +226,7 @@ const ShowRecipe = ({ product, onClose }) => {
                 onClick={handleBackToProduct}
             >
                 <i className="fa-solid fa-caret-left text-2xl mr-3"></i>
-                <span className="text-lg">ย้อนกลับ</span>
+                <span className="text-lg">Back</span>
             </button>
 
         </div>

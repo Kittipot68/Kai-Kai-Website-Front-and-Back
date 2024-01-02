@@ -86,7 +86,7 @@ function AboutUs() {
   
         {/* Column 2 */}
         <div className="mt-5 flex flex-col justify-center text-left">
-          <div className='text-red-600 p-2 font-bold text-4xl'>เกี่ยวกับเรา</div>
+          <div className='text-red-600 p-2 font-bold text-4xl'>About us</div>
           {aboutusdata.map((item, index) => (
          <div key={index} className="bg-white p-2 mb-4 ">
          <p className=" text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl text-gray-800 leading-relaxed">
@@ -98,7 +98,7 @@ function AboutUs() {
   
           <a href="/sungroup/About" className="inline-block w-full">
             <button className="mt-4 px-4 py-2 bg-red-500 text-white font-bold rounded hover:bg-red-700">
-              ดูเพิ่มเติม
+              Read More..
             </button>
           </a>
         </div>

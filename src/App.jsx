@@ -22,6 +22,7 @@ import ProductBackend from './BackendPage/Pages/Product';
 import RecipeBackend from './BackendPage/Pages/Recipe';
 import AboutBackend from './BackendPage/Pages/About';
 import ContactBackend from './BackendPage/Pages/Contact';
+import HeaderBackend from './BackendPage/Pages/Header'
 import Login from './Pages/Login';
 import Protected from './Component/Protected';
 
@@ -70,6 +71,7 @@ function App() {
         <Route path="/RecipeBackend" element=    {<Protected><Navbackend> <RecipeBackend />   </Navbackend> </Protected>} />
         <Route path="/AboutBackend" element=     {<Protected><Navbackend> <AboutBackend />    </Navbackend> </Protected>} />
         <Route path="/ContactBackend" element=   {<Protected><Navbackend> <ContactBackend />  </Navbackend> </Protected>} />
+        <Route path="/HeaderBackend" element=   {<Protected><Navbackend> <HeaderBackend />  </Navbackend> </Protected>} />
 
       </Routes>
     </Router>

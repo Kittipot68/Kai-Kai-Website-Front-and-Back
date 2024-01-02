@@ -36,6 +36,10 @@ function Navbackend({ children }) {
               <Link to="/ContactBackend" className="hover:text-gray-300">Contact</Link>
             </li>
 
+            <li>
+              <Link to="/HeaderBackend" className="hover:text-gray-300">Header</Link>
+            </li>
+
             {/* Uncomment the line below if needed */}
             {/* <li><Link to="/backend/FileUploadForm" className="hover:text-gray-300">File Upload</Link></li> */}
 

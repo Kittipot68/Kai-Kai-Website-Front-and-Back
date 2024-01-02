@@ -37,7 +37,7 @@ function SelectContact({ }) {
       // Map over the array and conditionally select content_en when selectedLanguage is 'en'
       const transformedData = fetchedData.map((item) => ({
         ...item,
-        name: selectedLanguage === 'en' ? item.name_en : item.name,
+        name: selectedLanguage === 'th' ? item.name : item.name_en,
 
       }));
 

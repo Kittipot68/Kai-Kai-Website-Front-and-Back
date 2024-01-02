@@ -7,14 +7,14 @@ function About() {
   return (
     <div>
       <div><DetailAbout /></div>
-    {/* <div><AboutDetail /></div> */}
-    <div><VisionMission /></div>
-<div className='  p-10 '>
-    <div><Accreditations /></div>
+      {/* <div><AboutDetail /></div> */}
+      <div><VisionMission /></div>
+      <div className='  p-10 '>
+        <div><Accreditations /></div>
 
-    <div><AboutAward /></div>
+        <div><AboutAward /></div>
 
-    </div>
+      </div>
     </div>
 
   )
