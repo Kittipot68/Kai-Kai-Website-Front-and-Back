@@ -108,7 +108,7 @@ function RecipeProductBackend() {
 
     const handleUpdateProduct = () => {
         if (editid) {
-            fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php`, {
+            fetch(`https://sungroup.co.th/Php-Api/Recipe.php`, {
                 method: 'PUTNEWRECIPE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -180,7 +180,7 @@ function RecipeProductBackend() {
 
     const handleAddNewProduct = () => {
         if (selectedCategory) {
-            fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php', {
+            fetch('https://sungroup.co.th/Php-Api/Recipe.php', {
                 method: 'POSTADDRECIPE', // Assuming this is the correct method to add a product
                 headers: {
                     'Content-Type': 'application/json'
@@ -208,7 +208,7 @@ function RecipeProductBackend() {
             if (confirmDelete) {
                 try {
                     // Delete recipe
-                    const deleteRecipeResponse = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${productId.id}`, {
+                    const deleteRecipeResponse = await fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${productId.id}`, {
                         method: 'DELETERECIPE', // Assuming this is the correct method to delete a product
                         headers: {
                             'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ function RecipeProductBackend() {
                     }
 
                     // Delete picture
-                    const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+                    const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
                         method: 'DELETE',
                         body: JSON.stringify({ file_name: productId.picture }), // Assuming item is your product data
                         headers: {
@@ -260,7 +260,7 @@ function RecipeProductBackend() {
         if (file) {
             // Delete the old file
             try {
-                const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+                const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
                     method: 'DELETE',
                     body: JSON.stringify({ file_name: namepicture }),
                     headers: {
@@ -284,7 +284,7 @@ function RecipeProductBackend() {
             // Upload the new file
             const formData = new FormData();
             formData.append('file', file, editPicture); // Append the unique filename
-            fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+            fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
                 method: 'POST',
                 body: formData,
             })
@@ -343,7 +343,7 @@ function RecipeProductBackend() {
 
                                     <div key={product.id} className="border rounded-md p-4">
                                         {product.picture && <img
-                                            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product.picture}`}
+                                            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product.picture}`}
                                             alt={product.name}
                                             className="mb-2 w-64 h-64"
                                         />

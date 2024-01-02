@@ -17,7 +17,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
 
     useEffect(() => {
 
-        fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+        fetch('https://sungroup.co.th/Php-Api/Recipe.php')
             .then((response) => response.json())
             .then((data) => setCategories(data))
             .catch((error) => console.error('Error fetching categories:', error));
@@ -35,7 +35,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
 
     const handleSelectCategory = (category) => {
         onSelectCategory(category);
-        fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${category.id}`, {
+        fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${category.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
     };
 
     const handleSaveNewCategory = () => {
-        fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php', {
+        fetch('https://sungroup.co.th/Php-Api/Recipe.php', {
             method: 'POSTADDCATEGORY',
             headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
              name_jpn: newCategoryNameJPN })        })
             .then(response => response.json())
             .then(data => {
-                fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+                fetch('https://sungroup.co.th/Php-Api/Recipe.php')
                     .then((response) => response.json())
                     .then((data) => setCategories(data))
                     .catch((error) => console.error('Error fetching categories:', error));
@@ -101,7 +101,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
 
     const handleUpdateCategory = () => {
         if (editingCategory) {
-            fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php`, {
+            fetch(`https://sungroup.co.th/Php-Api/Recipe.php`, {
                 method: 'PUTNEWNAMECATEGORY',
                 headers: {
                     'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
                  })            })
                 .then(response => response.json())
                 .then(data => {
-                    fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+                    fetch('https://sungroup.co.th/Php-Api/Recipe.php')
                         .then((response) => response.json())
                         .then((data) => setCategories(data))
                         .catch((error) => console.error('Error fetching categories:', error));
@@ -133,7 +133,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
 
     const handleDeleteCategory = (categoryId) => {
         if (window.confirm("Are you sure you want to delete this category?")) {
-            fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${categoryId}`, {
+            fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${categoryId}`, {
                 method: 'DELETECATEGORY',
                 headers: {
                     'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ function RecipeCategoryBackend({ onSelectCategory }) {
                 .then(response => {
                     if (response.ok) {
                         // If the deletion was successful, fetch the updated category list
-                        fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+                        fetch('https://sungroup.co.th/Php-Api/Recipe.php')
                             .then((response) => response.json())
                             .then((data) => setCategories(data))
                             .catch((error) => console.error('Error fetching categories:', error));

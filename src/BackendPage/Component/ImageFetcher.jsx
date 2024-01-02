@@ -9,7 +9,7 @@ class ImageFetcher extends Component {
         const { imageName } = this.props;
 
         if (imageName) {
-            fetch(`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${imageName}`)
+            fetch(`https://sungroup.co.th/Php-Api/getpicture.php?name=${imageName}`)
                 .then((response) => {
                     if (response.status === 200) {
                         return response.blob();

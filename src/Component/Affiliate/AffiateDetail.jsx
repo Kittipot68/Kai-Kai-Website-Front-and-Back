@@ -17,7 +17,7 @@ function AffiateDetail({ selectedCompany }) {
   // useEffect(() => {
   //   if (selectedCompany) {
   //     // Fetch additional details based on the selected company ID
-  //     fetch(`https://sungroup.co.th/sungroup/Php-Api/Affiliate.php/${selectedCompany}`)
+  //     fetch(`https://sungroup.co.th/Php-Api/Affiliate.php/${selectedCompany}`)
   //       .then((response) => response.json())
   //       .then((details) => {
   //         setCompanyDetails(details);
@@ -32,7 +32,7 @@ function AffiateDetail({ selectedCompany }) {
 
     try {
       // Fetch data based on the selected language
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Affiliate.php/${selectedCompany}`)
+      const response = await fetch(`https://sungroup.co.th/Php-Api/Affiliate.php/${selectedCompany}`)
       const fetchedData = await response.json();
 
       const content =
@@ -74,7 +74,7 @@ function AffiateDetail({ selectedCompany }) {
         <div className="bg-blue-500 rounded-md">
           {companyDetails && companyDetails.picture && (
             <img
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${companyDetails.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${companyDetails.picture}`}
               alt="Banner"
               className="w-full h-auto border rounded-md"
             />

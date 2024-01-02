@@ -17,7 +17,7 @@ function CategoryBackend({ onSelectCategory }) {
 
   useEffect(() => {
     // Fetch categories when the component mounts
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php')
+    fetch('https://sungroup.co.th/Php-Api/Product.php')
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error('Error fetching categories:', error));
@@ -35,7 +35,7 @@ function CategoryBackend({ onSelectCategory }) {
 
   const handleSelectCategory = (category) => {
     onSelectCategory(category);
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Product.php/${category.id}`, {
+    fetch(`https://sungroup.co.th/Php-Api/Product.php/${category.id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ function CategoryBackend({ onSelectCategory }) {
   };
 
   const handleSaveNewCategory = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php', {
+    fetch('https://sungroup.co.th/Php-Api/Product.php', {
       method: 'POSTADDCATEGORY',
       headers: {
         'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ function CategoryBackend({ onSelectCategory }) {
     })
       .then(response => response.json())
       .then(data => {
-        fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php')
+        fetch('https://sungroup.co.th/Php-Api/Product.php')
           .then((response) => response.json())
           .then((data) => setCategories(data))
           .catch((error) => console.error('Error fetching categories:', error));
@@ -102,7 +102,7 @@ function CategoryBackend({ onSelectCategory }) {
 
   const handleUpdateCategory = () => {
     if (editingCategory) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Product.php`, {
+      fetch(`https://sungroup.co.th/Php-Api/Product.php`, {
         method: 'PUTNEWNAMECATEGORY',
         headers: {
           'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ function CategoryBackend({ onSelectCategory }) {
       })
         .then(response => response.json())
         .then(data => {
-          fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php')
+          fetch('https://sungroup.co.th/Php-Api/Product.php')
             .then((response) => response.json())
             .then((data) => setCategories(data))
             .catch((error) => console.error('Error fetching categories:', error));
@@ -136,7 +136,7 @@ function CategoryBackend({ onSelectCategory }) {
 
   const handleDeleteCategory = (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Product.php/${categoryId}`, {
+      fetch(`https://sungroup.co.th/Php-Api/Product.php/${categoryId}`, {
         method: 'DELETECATEGORY',
         headers: {
           'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ function CategoryBackend({ onSelectCategory }) {
         .then(response => {
           if (response.ok) {
             // If the deletion was successful, fetch the updated category list
-            fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php')
+            fetch('https://sungroup.co.th/Php-Api/Product.php')
               .then((response) => response.json())
               .then((data) => setCategories(data))
               .catch((error) => console.error('Error fetching categories:', error));

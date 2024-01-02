@@ -24,7 +24,7 @@ function FileUploadForm() {
       const uniqueFileName = generateUniqueFileName(file.name); // Generate a unique filename
       formData.append('file', file, uniqueFileName); // Append the unique filename
   
-      fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+      fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
         method: 'POST',
         body: formData,
       })

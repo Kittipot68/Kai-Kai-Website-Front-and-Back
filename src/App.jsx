@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <Router basename="/sungroup" >
+    <Router basename="/" >
       <ScrollToTop />
 
       <Routes>

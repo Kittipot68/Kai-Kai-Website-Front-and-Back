@@ -7,7 +7,7 @@ function CategoryRecipe({ onSelectCategory, disabled }) {
 
   // useEffect(() => {
   //   // Fetch categories when the component mounts
-  //   fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+  //   fetch('https://sungroup.co.th/Php-Api/Recipe.php')
   //     .then((response) => response.json())
   //     .then((data) => {
   //       setCategories(data);
@@ -27,7 +27,7 @@ function CategoryRecipe({ onSelectCategory, disabled }) {
   
     try {
       // Fetch data based on the selected language
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php')
+      const response = await fetch('https://sungroup.co.th/Php-Api/Recipe.php')
       const fetchedData = await response.json();
   
       // Map over the array and conditionally select content_en when selectedLanguage is 'en'
@@ -63,7 +63,7 @@ function CategoryRecipe({ onSelectCategory, disabled }) {
 
 
   const fetchProducts = (category) => {
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${category.id}`, {
+    fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${category.id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

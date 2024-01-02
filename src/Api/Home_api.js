@@ -1,6 +1,6 @@
 // api/api.js
 
-const apiUrl = 'https://sungroup.co.th/sungroup/Php-Api/Home.php/';
+const apiUrl = 'https://sungroup.co.th/Php-Api/Home.php/';
 
 export const fetchData = () => {
   return fetch(apiUrl)

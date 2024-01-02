@@ -49,7 +49,7 @@ export default function Login() {
  
     function loginSubmit(){
         if(user !== "" && pass != ""){
-            var url = "https://sungroup.co.th/sungroup/Php-Api/login.php";
+            var url = "https://sungroup.co.th/Php-Api/login.php";
             var headers = {
                 "Accept": "application/json",
                 "Content-type": "application/json"

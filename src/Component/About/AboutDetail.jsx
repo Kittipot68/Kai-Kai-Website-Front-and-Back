@@ -8,7 +8,7 @@ function AboutDetail() {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+    fetch('https://sungroup.co.th/Php-Api/About.php')
       .then((response) => response.json())
       .then((getdata) => setData(getdata))
       .catch((error) => console.error('Error fetching categories:', error));
@@ -52,7 +52,7 @@ function AboutDetail() {
           <div key={item.id} className="mb-4 rounded-md">
             <img
               loading='lazy'
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
               alt={item.title} // Add alt text for accessibility
               className="w-full rounded-md"
             />

@@ -17,7 +17,7 @@ function AboutUs() {
 
   // useEffect(() => {
   //   // Fetch data from the API
-  //   fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php')
+  //   fetch('https://sungroup.co.th/Php-Api/Home.php')
   //     .then((response) => response.json())
   //     .then((getdata) => {
   //       setData(getdata);
@@ -33,7 +33,7 @@ function AboutUs() {
   
     try {
       // Fetch data based on the selected language
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Home.php');
       const fetchedData = await response.json();
   
       // Map over the array and conditionally select content_en when selectedLanguage is 'en'
@@ -77,7 +77,7 @@ function AboutUs() {
           {aboutusdata.map((item, index) => (
             <img
               key={index}
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
               alt="About Us"
               className="w-full h-auto rounded-lg"
             />
@@ -96,7 +96,7 @@ function AboutUs() {
        
           ))}
   
-          <a href="/sungroup/About" className="inline-block w-full">
+          <a href="/About" className="inline-block w-full">
             <button className="mt-4 px-4 py-2 bg-red-500 text-white font-bold rounded hover:bg-red-700">
               Read More..
             </button>

@@ -14,7 +14,7 @@ function AboutAward() {
   
     try {
       // Fetch data based on the selected language
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+      const response = await fetch('https://sungroup.co.th/Php-Api/About.php')
 
 
       const fetchedData = await response.json();
@@ -58,7 +58,7 @@ function AboutAward() {
 
   // useEffect(() => {
   //   // Fetch data from the API
-  //   fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+  //   fetch('https://sungroup.co.th/Php-Api/About.php')
   //     .then((response) => response.json())
   //     .then((getdata) => setData(getdata))
   //     .catch((error) => console.error('Error fetching categories:', error));
@@ -115,7 +115,7 @@ function AboutAward() {
           {data.map((award, index) => (
             <div key={index} className="p-2" onClick={() => handleImageClick(award)}>
               <img
-                src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${award.picture}`}
+                src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${award.picture}`}
                 alt={`Award ${index + 1}`}
                 className='hover:scale-110 p-2 '
                 style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
@@ -134,7 +134,7 @@ function AboutAward() {
         <Modal.Body>
           <div className='flex justify-center'>
             <img
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${selectedAward?.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${selectedAward?.picture}`}
               alt={`Award`}
               style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}
             />

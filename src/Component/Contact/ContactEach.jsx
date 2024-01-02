@@ -10,7 +10,7 @@ function ContactEach({ selectedCompany }) {
   //   const fetchContactDetails = async () => {
   //     if (selectedCompany) {
   //       try {
-  //         const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Contact.php/${selectedCompany}`);
+  //         const response = await fetch(`https://sungroup.co.th/Php-Api/Contact.php/${selectedCompany}`);
   //         const details = await response.json();
   //         setContactDetail(details[0]); // Assuming details is an array and you want the first item
   //       } catch (error) {
@@ -28,7 +28,7 @@ function ContactEach({ selectedCompany }) {
 
     try {
       // Fetch data based on the selected language
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Contact.php/${selectedCompany}`)
+      const response = await fetch(`https://sungroup.co.th/Php-Api/Contact.php/${selectedCompany}`)
       const fetchedData = await response.json();
 
       // Map over the array and conditionally select content_en when selectedLanguage is 'en'
@@ -71,7 +71,7 @@ function ContactEach({ selectedCompany }) {
     <div>
       <img
         loading="lazy"
-        src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${"map.png"}`}
+        src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${"map.png"}`}
         alt="Contact"
         className="w-32 h-32"
       />
@@ -87,7 +87,7 @@ function ContactEach({ selectedCompany }) {
   <div className="p-4 border border-gray-300 rounded-md shadow-md flex flex-col items-center justify-start">
     <img
       loading="lazy"
-      src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${"phone-call.png"}`}
+      src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${"phone-call.png"}`}
       alt="Contact"
       className="w-32 h-32"
     />
@@ -98,7 +98,7 @@ function ContactEach({ selectedCompany }) {
   <div className="p-4 border border-gray-300 rounded-md shadow-md flex flex-col items-center justify-start">
     <img
       loading="lazy"
-      src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${"email.png"}`}
+      src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${"email.png"}`}
       alt="Contact"
       className="w-32 h-32"
     />

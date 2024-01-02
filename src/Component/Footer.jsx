@@ -96,7 +96,7 @@ function Footer() {
 
   const fetchDataFromDatabase = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Header.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Header.php');
       const fetchedData = await response.json();
       setheaderdata(fetchedData);
     } catch (error) {
@@ -168,7 +168,7 @@ function Footer() {
 
           <div className='p-5 mx-auto md:mx-0'>
             <div className=''>
-              <a href='/sungroup'>
+              <a href='/'>
                 <img
                   src={logo}
                   alt="Logo"
@@ -244,12 +244,12 @@ function Footer() {
           <p className='lg:flex lg:justify-center lg:space-x-4'>
 
             {[
-              { text: textMappings[currentLanguage].home, link: '/sungroup' },
-              { text: textMappings[currentLanguage].about, link: '/sungroup/About' },
-              { text: textMappings[currentLanguage].affiliate, link: '/sungroup/AffiliateCorporations' },
-              { text: textMappings[currentLanguage].products, link: '/sungroup/Product' },
-              { text: textMappings[currentLanguage].recipes, link: '/sungroup/Recipe' },
-              { text: textMappings[currentLanguage].contact, link: '/sungroup/Contact' },
+              { text: textMappings[currentLanguage].home, link: '/' },
+              { text: textMappings[currentLanguage].about, link: '/About' },
+              { text: textMappings[currentLanguage].affiliate, link: '/AffiliateCorporations' },
+              { text: textMappings[currentLanguage].products, link: '/Product' },
+              { text: textMappings[currentLanguage].recipes, link: '/Recipe' },
+              { text: textMappings[currentLanguage].contact, link: '/Contact' },
               { text: textMappings[currentLanguage].career, link: 'http://www.sungroup.co.th/recruitment3/' },
 
             ].map((item) => (
@@ -263,13 +263,7 @@ function Footer() {
             ))}
 
 
-            {/* <a href='/sungroup' className={linkClasses}>{selectedLanguage === 'th' ? 'หน้าหลัก' : 'Home'}</a>
-            <a href='/sungroup/About' className={linkClasses}>{selectedLanguage === 'th' ? 'เกี่ยวกับเรา' : 'About Us'}</a>
-            <a href='/sungroup/AffiliateCorporations' className={linkClasses}>{selectedLanguage === 'th' ? 'ธุรกิจในเครือ' : 'Affiliate Corporations'}</a>
-            <a href='/sungroup/Product' className={linkClasses}>{selectedLanguage === 'th' ? 'สินค้า' : 'Products'}</a>
-            <a href='/sungroup/Recipe' className={linkClasses}>{selectedLanguage === 'th' ? 'สูตรอาหารและเมนูสุขภาพ' : 'Recipes'}</a>
-            <a href='/sungroup/Contact' className={linkClasses}>{selectedLanguage === 'th' ? 'ติดต่อเรา' : 'Contact Us'}</a>
-            <a href='http://www.sungroup.co.th/recruitment3/' className={linkClasses}>{selectedLanguage === 'th' ? 'ร่วมงานกับเรา' : 'Careers'}</a> */}
+        
           </p>
 
         </div>

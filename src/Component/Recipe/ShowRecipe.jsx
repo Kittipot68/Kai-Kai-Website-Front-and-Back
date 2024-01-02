@@ -21,7 +21,7 @@ const ShowRecipe = ({ product, onClose }) => {
     };
 
     // const fetchrecipehowdata = () => {
-    //     fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+    //     fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
     //         method: 'GETRECIPEHOW',
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const ShowRecipe = ({ product, onClose }) => {
         try {
           // Fetch data based on the selected language
           const response = await 
-          fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+          fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
             method: 'GETRECIPEHOW',
             headers: {
                 'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ const ShowRecipe = ({ product, onClose }) => {
 
 
     // const fetchrecipeingrediant = () => {
-    //     fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+    //     fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
     //         method: 'GETRECIPEINGREDIANT',
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ const ShowRecipe = ({ product, onClose }) => {
         try {
           // Fetch data based on the selected language
           const response = await 
-          fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+          fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
             method: 'GETRECIPEINGREDIANT',
             headers: {
                 'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ const ShowRecipe = ({ product, onClose }) => {
                 {/* First Column - Picture */}
                 <div>
                     <img
-                        src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product.picture}`}
+                        src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product.picture}`}
                         alt={product.name}
                         className="w-full h-full object-cover rounded-md"
                     />

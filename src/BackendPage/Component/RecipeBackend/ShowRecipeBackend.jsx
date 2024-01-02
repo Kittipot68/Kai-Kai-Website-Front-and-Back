@@ -44,7 +44,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
 
   const fetchrecipehow = () => {
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+    fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
       method: 'GETRECIPEHOW',
       headers: {
         'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
   };
 
   const fetchrecipeingrediant = () => {
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+    fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
       method: 'GETRECIPEINGREDIANT',
       headers: {
         'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
   const handleDeleteingredient = (id) => {
     if (window.confirm("Are you sure you want to delete this ingredient?")) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${id}`, {
+      fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${id}`, {
         method: 'DELETEINGREDIENT',
         headers: {
           'Content-Type': 'application/json'
@@ -136,7 +136,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
   }
 
   const handleAddingredient = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php', {
+    fetch('https://sungroup.co.th/Php-Api/Recipe.php', {
       method: 'POSTADDINGREDIENT',
       headers: {
         'Content-Type': 'application/json'
@@ -153,7 +153,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
   const handleUpdateingrediant = () => {
     if (editedid) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php`, {
+      fetch(`https://sungroup.co.th/Php-Api/Recipe.php`, {
         method: 'PUTNEWINGREDIENT',
         headers: {
           'Content-Type': 'application/json'
@@ -180,7 +180,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
   const handleDeleteHOW = (id) => {
     if (window.confirm("Are you sure you want to delete this HOW?")) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${id}`, {
+      fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${id}`, {
         method: 'DELETEHOW',
         headers: {
           'Content-Type': 'application/json'
@@ -199,7 +199,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
   }
 
   const handleAddHOW = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Recipe.php', {
+    fetch('https://sungroup.co.th/Php-Api/Recipe.php', {
       method: 'POSTADDHOW',
       headers: {
         'Content-Type': 'application/json'
@@ -218,7 +218,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
   const handleUpdatehow = () => {
     if (editedid) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php`, {
+      fetch(`https://sungroup.co.th/Php-Api/Recipe.php`, {
         method: 'PUTNEWHOW',
         headers: {
           'Content-Type': 'application/json'
@@ -241,7 +241,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
   }
 
   const handlesaveSecond = () => {
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php`, {
+    fetch(`https://sungroup.co.th/Php-Api/Recipe.php`, {
       method: 'PUTNEWCOOKINGTIME',
       headers: {
         'Content-Type': 'application/json'
@@ -258,7 +258,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
 
 
   const fetchproductdetail = () => {
-    fetch(`https://sungroup.co.th/sungroup/Php-Api/Recipe.php/${product.id}`, {
+    fetch(`https://sungroup.co.th/Php-Api/Recipe.php/${product.id}`, {
       method: 'GETDETAIL',
       headers: {
         'Content-Type': 'application/json'
@@ -292,7 +292,7 @@ const ShowRecipeBackend = ({ product, onClose }) => {
         {/* First Column - Picture */}
         <div>
           <img
-            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product.picture}`}
+            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product.picture}`}
             alt={product.name}
             className="w-full h-full object-cover rounded-md"
           />

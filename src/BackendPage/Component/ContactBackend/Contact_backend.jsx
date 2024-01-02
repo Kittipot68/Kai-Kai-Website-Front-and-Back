@@ -12,7 +12,7 @@ function Contact_backend() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Contact.php', {
+            const response = await fetch('https://sungroup.co.th/Php-Api/Contact.php', {
                 headers: {
                     'Accept-Charset': 'utf-8',
                 },
@@ -50,7 +50,7 @@ function Contact_backend() {
 
 
     const handleAddnewContact = () => {
-        fetch('https://sungroup.co.th/sungroup/Php-Api/Contact.php', {
+        fetch('https://sungroup.co.th/Php-Api/Contact.php', {
             method: 'POSTADDNEWCONTACT',
             headers: {
                 'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ function Contact_backend() {
 
         if (confirmDeletion) {
             try {
-                const deleteDataResponse = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Contact.php/${id}`, {
+                const deleteDataResponse = await fetch(`https://sungroup.co.th/Php-Api/Contact.php/${id}`, {
                     method: 'DELETECONTACT', // Use 'DELETE' method for deleting data
                 });
 
@@ -95,7 +95,7 @@ function Contact_backend() {
 
     const handleSaveNewdata = () => {
         if (selectedContact) {
-            fetch(`https://sungroup.co.th/sungroup/Php-Api/Contact.php`, {
+            fetch(`https://sungroup.co.th/Php-Api/Contact.php`, {
                 method: 'PUTNEWCONTACT',
                 headers: {
                     'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ function Accreditations() {
     
       try {
         // Fetch data based on the selected language
-        const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+        const response = await fetch('https://sungroup.co.th/Php-Api/About.php')
   
   
         const fetchedData = await response.json();
@@ -63,7 +63,7 @@ function Accreditations() {
 
     // useEffect(() => {
     //     // Fetch data from the API
-    //     fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+    //     fetch('https://sungroup.co.th/Php-Api/About.php')
     //         .then((response) => response.json())
     //         .then((getdata) => {
     //             setData(getdata);
@@ -120,7 +120,7 @@ function Accreditations() {
         autoplaySpeed: 1300, // Set autoplay speed in milliseconds
       };
 
-      
+      console.log(data,"accreditation")
 
     return (
         <div className="text-center p-5">
@@ -130,7 +130,7 @@ function Accreditations() {
           {data.map((accreditation, index) => (
             <div key={index} className="p-2" onClick={() => handleImageClick(accreditation)}>
               <img
-                src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${accreditation.picture}`}
+                src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${accreditation.picture}`}
                 alt={`accreditation ${index + 1}`}
                 className='hover:scale-110 p-2 '
                 style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
@@ -150,7 +150,7 @@ function Accreditations() {
         <Modal.Body>
           <div className='flex justify-center'>
             <img
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${selectedAward?.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${selectedAward?.picture}`}
               alt={`Award`}
               style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}
             />

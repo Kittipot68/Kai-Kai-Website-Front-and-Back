@@ -11,7 +11,7 @@ function SelectContact({ }) {
 
   // useEffect(() => {
   //   // Fetch data from the API
-  //   fetch('https://sungroup.co.th/sungroup/Php-Api/Contact.php')
+  //   fetch('https://sungroup.co.th/Php-Api/Contact.php')
   //     .then((response) => response.json())
   //     .then((getdata) => {
   //       setCompanies(getdata);
@@ -30,7 +30,7 @@ function SelectContact({ }) {
 
     try {
       // Fetch data based on the selected language
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Contact.php')
+      const response = await fetch('https://sungroup.co.th/Php-Api/Contact.php')
       const fetchedData = await response.json();
       // console.log("fetchedData",fetchedData);
 

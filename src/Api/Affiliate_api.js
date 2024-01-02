@@ -1,6 +1,6 @@
 // api/api.js
 
-const apiUrl = 'https://sungroup.co.th/sungroup/Php-Api/Affiliate.php/';
+const apiUrl = 'https://sungroup.co.th/Php-Api/Affiliate.php/';
 
 export const fetchData = () => {
   return fetch(apiUrl)

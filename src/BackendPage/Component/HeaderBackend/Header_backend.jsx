@@ -15,7 +15,7 @@ function Header() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Header.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Header.php');
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -49,7 +49,7 @@ function Header() {
 
   const handleSaveEdit = async () => {
     try {
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Header.php`, {
+      const response = await fetch(`https://sungroup.co.th/Php-Api/Header.php`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

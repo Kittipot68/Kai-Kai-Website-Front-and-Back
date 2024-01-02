@@ -22,7 +22,7 @@ function Header({ children }) {
 
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split('/');
-  const desiredPart = pathSegments[2];
+  const desiredPart = pathSegments[1];
 
 
   // console.log("desiredPart",desiredPart)
@@ -33,7 +33,7 @@ function Header({ children }) {
 
   const fetchDataFromDatabase = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Header.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Header.php');
       const fetchedData = await response.json();
       setheaderdata(fetchedData);
     } catch (error) {
@@ -100,7 +100,7 @@ function Header({ children }) {
         </div>
         <div className="mx-auto flex items-center justify-between h-16 px-4">
           <div className="flex mr-4 shrink-0">
-            <a href='/sungroup'>
+            <a href='/'>
               <img
                 src={logo}
                 alt="Logo"
@@ -129,17 +129,17 @@ function Header({ children }) {
 
             <div className="flex px-2 xl:px-0 py-3 space-y-2 xl:space-y-0 xl:space-x-2 font-medium text-slate-700">
               {[
-                { text: textMappings[currentLanguage].home, link: '/sungroup' },
-                { text: textMappings[currentLanguage].about, link: '/sungroup/About' },
-                { text: textMappings[currentLanguage].affiliate, link: '/sungroup/AffiliateCorporations' },
-                { text: textMappings[currentLanguage].products, link: '/sungroup/Product' },
-                { text: textMappings[currentLanguage].recipes, link: '/sungroup/Recipe' },
-                { text: textMappings[currentLanguage].contact, link: '/sungroup/Contact' },
+                { text: textMappings[currentLanguage].home, link: '/' },
+                { text: textMappings[currentLanguage].about, link: '/About' },
+                { text: textMappings[currentLanguage].affiliate, link: '/AffiliateCorporations' },
+                { text: textMappings[currentLanguage].products, link: '/Product' },
+                { text: textMappings[currentLanguage].recipes, link: '/Recipe' },
+                { text: textMappings[currentLanguage].contact, link: '/Contact' },
               ].map((item) => (
                 <a
                   key={item.link}
                   href={item.link}
-                  className={` ${desiredPart === item.link.split('/')[2]
+                  className={` ${desiredPart === item.link.split('/')[1]
                       ? 'block xl:inline-block px-3 py-2  text-2xl focus:outline-none  no-underline   active text-red-600 font-extrabold'
                       : 'outline-none  border-transition block xl:inline-block px-3 py-2  text-2xl focus:outline-none  no-underline font-semibold '
                     }`}
@@ -166,17 +166,17 @@ function Header({ children }) {
                 <div className="px-2 xl:px-0 py-3 space-y-2 xl:space-y-0 xl:space-x-2 font-medium text-slate-700">
 
                   {[
-                    { text: textMappings[currentLanguage].home, link: '/sungroup' },
-                    { text: textMappings[currentLanguage].about, link: '/sungroup/About' },
-                    { text: textMappings[currentLanguage].affiliate, link: '/sungroup/AffiliateCorporations' },
-                    { text: textMappings[currentLanguage].products, link: '/sungroup/Product' },
-                    { text: textMappings[currentLanguage].recipes, link: '/sungroup/Recipe' },
-                    { text: textMappings[currentLanguage].contact, link: '/sungroup/Contact' },
+                    { text: textMappings[currentLanguage].home, link: '/' },
+                    { text: textMappings[currentLanguage].about, link: '/About' },
+                    { text: textMappings[currentLanguage].affiliate, link: '/AffiliateCorporations' },
+                    { text: textMappings[currentLanguage].products, link: '/Product' },
+                    { text: textMappings[currentLanguage].recipes, link: '/Recipe' },
+                    { text: textMappings[currentLanguage].contact, link: '/Contact' },
                   ].map((item) => (
                     <a
                       key={item.link}
                       href={item.link}
-                      className={`block xl:inline-block px-3 py-2 rounded-xl text-2xl hover:bg-gray-200 focus:outline-none focus:text-white focus:bg-gray-400 no-underline text-center ${desiredPart === item.link.split('/')[2] ? 'active text-red-600 font-extrabold' : 'text-black font-semibold hover:text-white'
+                      className={`block xl:inline-block px-3 py-2 rounded-xl text-2xl hover:bg-gray-200 focus:outline-none focus:text-white focus:bg-gray-400 no-underline text-center ${desiredPart === item.link.split('/')[1] ? 'active text-red-600 font-extrabold' : 'text-black font-semibold hover:text-white'
                         }`}
                     >
                       {item.text}

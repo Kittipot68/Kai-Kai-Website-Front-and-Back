@@ -126,7 +126,7 @@ function RecipeItem() {
                         <div className="transition-transform transform group-hover:scale-105 duration-300 ease-in-out">
                           <img
                             loading='lazy'
-                            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product.picture}`}
+                            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product.picture}`}
                             alt={product.name}
                             className="card-img-top"
                           />

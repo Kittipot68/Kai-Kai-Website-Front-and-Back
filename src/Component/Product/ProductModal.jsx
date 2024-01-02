@@ -15,7 +15,7 @@ const ProductModal = ({ product, onClose }) => {
                     <div className="mb-4 sm:mb-0">
                         {/* Content for the first column */}
                         <img
-                            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product?.photo}`}
+                            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product?.photo}`}
                             alt={product?.name}
                             className=" "
                         />

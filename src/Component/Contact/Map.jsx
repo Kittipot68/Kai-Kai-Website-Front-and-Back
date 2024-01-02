@@ -7,7 +7,7 @@ function Map({ selectedCompany }) {
     const fetchContactDetails = async () => {
       if (selectedCompany) {
         try {
-          const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Contact.php/${selectedCompany}`);
+          const response = await fetch(`https://sungroup.co.th/Php-Api/Contact.php/${selectedCompany}`);
           const details = await response.json();
 
           if (details.length > 0) {

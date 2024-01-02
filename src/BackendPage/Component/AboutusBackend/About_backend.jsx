@@ -35,7 +35,7 @@ function AboutBackend() {
   // Define a function to fetch data
   const fetchData = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/About.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/About.php');
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -44,7 +44,7 @@ function AboutBackend() {
   };
 
   const handleAddMain = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/About.php', {
+    fetch('https://sungroup.co.th/Php-Api/About.php', {
       method: 'POSTADDMAIN',
       headers: {
         'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ function AboutBackend() {
 
 
   const handleAddAward = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/About.php', {
+    fetch('https://sungroup.co.th/Php-Api/About.php', {
       method: 'POSTADDAWARD',
       headers: {
         'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ function AboutBackend() {
   };
 
   const handleAddAccreditations = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/About.php', {
+    fetch('https://sungroup.co.th/Php-Api/About.php', {
       method: 'POSTADDAccreditations',
       headers: {
         'Content-Type': 'application/json'
@@ -93,12 +93,12 @@ function AboutBackend() {
 
     if (confirmDeletion) {
       try {
-        const deleteDataResponse = await fetch(`https://sungroup.co.th/sungroup/Php-Api/About.php/${item.id}`, {
+        const deleteDataResponse = await fetch(`https://sungroup.co.th/Php-Api/About.php/${item.id}`, {
           method: 'DELETEABOUT',
         });
 
         if (deleteDataResponse.ok) {
-          const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+          const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
             method: 'DELETE',
             body: JSON.stringify({ file_name: item.picture }),
             headers: {
@@ -129,7 +129,7 @@ function AboutBackend() {
     if (file) {
       // Delete the old file
       try {
-        const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+        const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
           method: 'DELETE',
           body: JSON.stringify({ file_name: oldpicname }),
           headers: {
@@ -153,7 +153,7 @@ function AboutBackend() {
       // Upload the new file
       const formData = new FormData();
       formData.append('file', file, editedPicture); // Append the unique filename
-      fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+      fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
         method: 'POST',
         body: formData,
       })
@@ -203,7 +203,7 @@ function AboutBackend() {
 
   const handleupdatepicture = () => {
     if (editedId) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/About.php`, {
+      fetch(`https://sungroup.co.th/Php-Api/About.php`, {
         method: 'PUTNEWPICTURE',
         headers: {
           'Content-Type': 'application/json'
@@ -296,7 +296,7 @@ function AboutBackend() {
 
     try {
       // Make an API call to update the content
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/About.php`, {
+      const response = await fetch(`https://sungroup.co.th/Php-Api/About.php`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -357,7 +357,7 @@ function AboutBackend() {
             {maindata.map((item) => (
               <div key={item.id} className="mb-4">
                 <img
-                  src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+                  src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
                   alt={item.id}
                   className="max-w-full"
                 />
@@ -419,7 +419,7 @@ function AboutBackend() {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {awarddata.map((item) => (
             <div key={item.id} className="bg-white p-4 rounded-lg shadow-md">
-              <img src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+              <img src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
                 alt={item.id} className="max-w-full mb-4" />
 
               <textarea
@@ -475,7 +475,7 @@ function AboutBackend() {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {Accreditationsdata.map((item) => (
             <div key={item.id} className="bg-white p-4 rounded-lg shadow-md">
-              <img src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+              <img src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
                 alt={item.id} className="max-w-full mb-4" />
 
               <textarea
@@ -528,7 +528,7 @@ function AboutBackend() {
       <Modal show={showEditModal} onClose={closeEditModal}>
         <Modal.Body>
           {/* Display the current edited picture */}
-          <img src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${editedPicture}`}
+          <img src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${editedPicture}`}
             alt={`Edited ${editedId}`} className="max-w-full mb-4" />
           <input type="file" onChange={handleFileChange} className="hidden" id="fileInput" />
           <label htmlFor="fileInput" className="block bg-blue-500 text-white rounded-lg cursor-pointer p-2 hover:bg-blue-600 text-center">

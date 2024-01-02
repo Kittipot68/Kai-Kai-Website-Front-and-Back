@@ -54,7 +54,7 @@ function Home_backend() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Home.php');
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -130,7 +130,7 @@ function Home_backend() {
 
     try {
       // Make an API call to update the content
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Home.php`, {
+      const response = await fetch(`https://sungroup.co.th/Php-Api/Home.php`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ function Home_backend() {
 
 
   // const handleadd = async () => {
-  //   fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php', {
+  //   fetch('https://sungroup.co.th/Php-Api/Home.php', {
   //     method: 'POST',
   //     headers: {
   //       'Content-Type': 'application/json'
@@ -199,7 +199,7 @@ function Home_backend() {
 
   const handleadd = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php', {
+      const response = await fetch('https://sungroup.co.th/Php-Api/Home.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -262,7 +262,7 @@ function Home_backend() {
     if (file) {
       // Delete the old file
       try {
-        const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+        const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
           method: 'DELETE',
           body: JSON.stringify({ file_name: namepicture }),
           headers: {
@@ -286,7 +286,7 @@ function Home_backend() {
       // Upload the new file
       const formData = new FormData();
       formData.append('file', file, editedPicture); // Append the unique filename
-      fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+      fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
         method: 'POST',
         body: formData,
       })
@@ -314,12 +314,12 @@ function Home_backend() {
 
     if (confirmDeletion) {
       try {
-        const deleteDataResponse = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Home.php/${item.id}`, {
+        const deleteDataResponse = await fetch(`https://sungroup.co.th/Php-Api/Home.php/${item.id}`, {
           method: 'DELETE',
         });
 
         if (deleteDataResponse.ok) {
-          const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+          const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
             method: 'DELETE',
             body: JSON.stringify({ file_name: item.picture }),
             headers: {
@@ -364,7 +364,7 @@ function Home_backend() {
 
                 <img
                   loading='lazy'
-                  src={item.picture ? `https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}` : 'https://placehold.co/1900x800'}
+                  src={item.picture ? `https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}` : 'https://placehold.co/1900x800'}
                   className="mb-4 rounded-md"
                   style={{ width: '200px', height: '100px' }}
                   alt="Item Image"
@@ -604,7 +604,7 @@ function Home_backend() {
               <img
                 loading='lazy'
 
-                src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+                src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
                 className="mb-4 rounded-md"
                 style={{ width: '100%', height: '150px' }}
                 alt={item.id}
@@ -734,7 +734,7 @@ function Home_backend() {
             <div className=" flex-col justify-center text-center">
               <img
                 loading='lazy'
-                src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+                src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
                 className="mb-4 rounded-md"
                 style={{ width: '100%', height: '150px' }}
                 alt={item.id}

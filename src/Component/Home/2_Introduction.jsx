@@ -10,7 +10,7 @@ function Introduction() {
   
     try {
       // Fetch data based on the selected language
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Home.php');
       const fetchedData = await response.json();
   
       // Map over the array and conditionally select content for different languages
@@ -78,7 +78,7 @@ function Introduction() {
             className="border-gray-200 shadow-md relative rounded-lg bg-white hover:transform hover:scale-105 p-4 text-center transition duration-300 ease-in-out transform hover:shadow-lg"
           >
             <img
-              src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${item.picture}`}
+              src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
               alt={`Image ${index + 1}`}
               className="mx-auto mb-2 max-w-full h-32"
             />

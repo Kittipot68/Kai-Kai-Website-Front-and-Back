@@ -118,7 +118,7 @@ function ProduckBackend() {
 
   const handleUpdateProduct = () => {
     if (editid) {
-      fetch(`https://sungroup.co.th/sungroup/Php-Api/Product.php`, {
+      fetch(`https://sungroup.co.th/Php-Api/Product.php`, {
         method: 'PUTNEWPRODUCT',
         headers: {
           'Content-Type': 'application/json'
@@ -202,7 +202,7 @@ function ProduckBackend() {
 
   const handleAddNewProduct = () => {
     if (selectedCategory) {
-      fetch('https://sungroup.co.th/sungroup/Php-Api/Product.php', {
+      fetch('https://sungroup.co.th/Php-Api/Product.php', {
         method: 'POSTADDPRODUCT', // Assuming this is the correct method to add a product
         headers: {
           'Content-Type': 'application/json'
@@ -228,7 +228,7 @@ function ProduckBackend() {
       const confirmDelete = window.confirm('Are you sure you want to delete this product?');
 
       if (confirmDelete) {
-        fetch(`https://sungroup.co.th/sungroup/Php-Api/Product.php/${productId}`, {
+        fetch(`https://sungroup.co.th/Php-Api/Product.php/${productId}`, {
           method: 'DELETEPRODUCT', // Assuming this is the correct method to delete a product
           headers: {
             'Content-Type': 'application/json'
@@ -264,7 +264,7 @@ function ProduckBackend() {
     if (file) {
         // Delete the old file
         try {
-            const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+            const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
                 method: 'DELETE',
                 body: JSON.stringify({ file_name: namepicture }),
                 headers: {
@@ -288,7 +288,7 @@ function ProduckBackend() {
         // Upload the new file
         const formData = new FormData();
         formData.append('file', file, editPicture); // Append the unique filename
-        fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+        fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
             method: 'POST',
             body: formData,
         })
@@ -345,7 +345,7 @@ function ProduckBackend() {
 
                   <div key={product.id} className="border rounded-md p-4">
                     {product.photo && <img
-                      src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${product.photo}`}
+                      src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${product.photo}`}
                       alt={product.name}
                       className="mb-2 w-64 h-64"
                       loading='lazy'

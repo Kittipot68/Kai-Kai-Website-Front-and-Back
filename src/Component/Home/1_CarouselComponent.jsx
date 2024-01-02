@@ -7,7 +7,7 @@ function CarouselComponent() {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php')
+    fetch('https://sungroup.co.th/Php-Api/Home.php')
       .then((response) => response.json())
       .then((getdata) => setData(getdata))
       .catch((error) => console.error('Error fetching categories:', error));
@@ -15,14 +15,16 @@ function CarouselComponent() {
 
   return (
     <Carousel pause="hover" variant="dark" touch>
-      {pictureData.map((image, index) => (
+      {pictureData.map((item, index) => (
         <Carousel.Item key={index} interval={3000}>
           <img
-            className="d-block w-100 h-auto"
-            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${image.picture}`}
+          key={index}
+            className="d-block w-full h-auto"
+            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${item.picture}`}
             alt={`Image ${index + 1}`}
 
           />
+            
         </Carousel.Item>
       ))}
     </Carousel>

@@ -9,7 +9,7 @@ function DetailAbout() {
 
     // useEffect(() => {
     //     // Fetch data from the API
-    //     fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+    //     fetch('https://sungroup.co.th/Php-Api/About.php')
     //         .then((response) => response.json())
     //         .then((getdata) => setData(getdata))
     //         .catch((error) => console.error('Error fetching categories:', error));
@@ -21,7 +21,7 @@ function DetailAbout() {
       
         try {
           // Fetch data based on the selected language
-          const response = await   fetch('https://sungroup.co.th/sungroup/Php-Api/About.php')
+          const response = await   fetch('https://sungroup.co.th/Php-Api/About.php')
 
           const fetchedData = await response.json();
       
@@ -78,7 +78,7 @@ function DetailAbout() {
                                         <td className="mt-3 p-4 gap-4 flex flex-col-reverse md:flex-row">
                                             {/* Picture column */}
                                             <div className={`w-full md:w-1/2 md:relative ${index % 2 === 0 ? 'order-2 mt-0' : 'order-1 mb-4'}`}>
-                                                <img src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${about.picture}`}
+                                                <img src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${about.picture}`}
                                                     alt={`Image ${index + 1}`} className="w-full h-auto mx-auto" />
                                             </div>
                                             {/* Content column */}
@@ -94,7 +94,7 @@ function DetailAbout() {
                                         <td className="mt-3 p-4 gap-4 text-center flex flex-col md:flex-row">
                                             {/* Picture column */}
                                             <div className="md:w-1/2 md:relative">
-                                                <img src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${about.picture}`}
+                                                <img src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${about.picture}`}
                                                     alt={`Image ${index + 1}`} className="w-full h-auto mx-auto md:order-1 md:mb-4" />
                                             </div>
                                             {/* Content column */}

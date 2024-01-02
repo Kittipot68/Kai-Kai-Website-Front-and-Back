@@ -49,7 +49,7 @@ function AffiliateBackend() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Affiliate.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Affiliate.php');
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -168,7 +168,7 @@ function AffiliateBackend() {
   const handleSave = async () => {
     try {
 
-      const response = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Affiliate.php`, {
+      const response = await fetch(`https://sungroup.co.th/Php-Api/Affiliate.php`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ function AffiliateBackend() {
         <div>
           <h3 className="text-xl font-semibold mb-2">รุปปัจจุบัน</h3>
           <img
-            src={`https://sungroup.co.th/sungroup/Php-Api/getpicture.php?name=${editItem.picture}`} // Replace 'your-base-url' with the actual base URL
+            src={`https://sungroup.co.th/Php-Api/getpicture.php?name=${editItem.picture}`} // Replace 'your-base-url' with the actual base URL
             alt="Current Picture"
             className="mb-4 rounded-md"
             style={{ maxWidth: '200px' }}
@@ -522,7 +522,7 @@ function AffiliateBackend() {
     if (file) {
       // Delete the old file
       try {
-        const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+        const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
           method: 'DELETE',
           body: JSON.stringify({ file_name: oldpicname }),
           headers: {
@@ -548,7 +548,7 @@ function AffiliateBackend() {
       // Upload the new file
       const formData = new FormData();
       formData.append('file', file, editedPicture); // Append the unique filename
-      fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+      fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
         method: 'POST',
         body: formData,
       })
@@ -580,7 +580,7 @@ function AffiliateBackend() {
 
 
   const handleadd = () => {
-    fetch('https://sungroup.co.th/sungroup/Php-Api/Affiliate.php', {
+    fetch('https://sungroup.co.th/Php-Api/Affiliate.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -598,12 +598,12 @@ function AffiliateBackend() {
 
     if (confirmDeletion) {
       try {
-        const deleteDataResponse = await fetch(`https://sungroup.co.th/sungroup/Php-Api/Affiliate.php/${item.id}`, {
+        const deleteDataResponse = await fetch(`https://sungroup.co.th/Php-Api/Affiliate.php/${item.id}`, {
           method: 'DELETE',
         });
 
         if (deleteDataResponse.ok) {
-          const deletePictureResponse = await fetch('https://sungroup.co.th/sungroup/Php-Api/uploadpicture.php/', {
+          const deletePictureResponse = await fetch('https://sungroup.co.th/Php-Api/uploadpicture.php/', {
             method: 'DELETE',
             body: JSON.stringify({ file_name: item.picture }),
             headers: {

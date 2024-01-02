@@ -8,7 +8,7 @@ function VisionMission() {
     const selectedLanguage = localStorage.getItem('selectedLanguage') || 'th';
 
     try {
-      const response = await fetch('https://sungroup.co.th/sungroup/Php-Api/Home.php');
+      const response = await fetch('https://sungroup.co.th/Php-Api/Home.php');
       const fetchedData = await response.json();
 
       const transformedData = fetchedData.map((item) => ({

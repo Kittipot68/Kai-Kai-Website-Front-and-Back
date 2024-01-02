@@ -156,8 +156,8 @@ function ProductItem() {
     window.scrollTo(0, 0);
   }, [currentPage]); // Re-run the effect when currentPage changes
 
-  
-  
+
+
   const handleCategorySelect = (category) => {
     setIsLoading(true);
     // Simulating an API call with setTimeout
@@ -168,31 +168,31 @@ function ProductItem() {
           selectedLanguage === 'en'
             ? category.name_en
             : selectedLanguage === 'jpn'
-            ? category.name_jpn
-            : selectedLanguage === 'cn'
-            ? category.name_cn
-            : category.name,
+              ? category.name_jpn
+              : selectedLanguage === 'cn'
+                ? category.name_cn
+                : category.name,
         products: category.products.map((product) => ({
           ...product,
           name:
             selectedLanguage === 'en'
               ? product.name_en
               : selectedLanguage === 'jpn'
-              ? product.name_jpn
-              : selectedLanguage === 'cn'
-              ? product.name_cn
-              : product.name,
+                ? product.name_jpn
+                : selectedLanguage === 'cn'
+                  ? product.name_cn
+                  : product.name,
           description:
             selectedLanguage === 'en'
               ? product.description_en
               : selectedLanguage === 'jpn'
-              ? product.description_jpn
-              : selectedLanguage === 'cn'
-              ? product.description_cn
-              : product.description,
+                ? product.description_jpn
+                : selectedLanguage === 'cn'
+                  ? product.description_cn
+                  : product.description,
         })),
       };
-      
+
 
       setSelectedCategory(transformedCategory);
       setIsLoading(false);
@@ -239,7 +239,7 @@ function ProductItem() {
                 {currentItems &&
                   currentItems.map((product) => (
 
-                    <div onClick={() => handleProductClick(product)}  className="movie-cards mx-auto shadow-xl mt-10 mb-10  " style={{ width: '310px', height: '320px' }}  >
+                    <div onClick={() => handleProductClick(product)} className="movie-cards mx-auto shadow-xl mt-10 mb-10  " style={{ width: '310px', height: '320px' }}  >
                       <div className="card">
                         <img
                           loading="lazy"
@@ -252,7 +252,6 @@ function ProductItem() {
                         <div className="content">
                           <p className={`short-desc `}>
                             <TruncatedText text={product.description} maxLength={200} />
-                            {/* {product.description} */}
                           </p>
                           {/* <p className='infos'>
                             สนใจสินค้า สั่งซื้อได้ที่นี่
@@ -267,9 +266,12 @@ function ProductItem() {
                           </p> */}
                         </div>
                       </div>
-                      <h2 className="text-3xl break-normal text-center text-red-600 font-semibold p-2"><TruncatedText text={product.name} maxLength={30} />
-                      </h2>
-                    
+                      <div>
+                        <h2 className="text-3xl break-normal text-center text-red-600 font-semibold p-2"><TruncatedText text={product.name} maxLength={30} />
+                        </h2>
+                      </div>
+
+
                     </div>
 
 
@@ -278,37 +280,37 @@ function ProductItem() {
               </div>
               {currentItems.length > 0 && ( // Add this condition to check if currentItems has items
 
-              <div className="flex justify-center">
-                <Pagination className="mt-10 custom-pagination mx-auto">
-                  <Pagination.Prev
-                    className="mr-3"
-                    onClick={() => handlePaginationClick(currentPage - 1)}
-                    disabled={currentPage === 1}
-                  >
-                    Prev
-                  </Pagination.Prev>
-                  {Array.from({ length: Math.ceil(selectedCategory.products.length / itemsPerPage) }).map((_, index) => (
-                    <Pagination.Item
-                      key={index + 1}
-                      active={index + 1 === currentPage}
-                      onClick={() => handlePaginationClick(index + 1)}
-                      className='mr-2 '
-                      style={{ borderColor: 'red' }}
+                <div className="flex justify-center">
+                  <Pagination className="mt-10 custom-pagination mx-auto">
+                    <Pagination.Prev
+                      className="mr-3"
+                      onClick={() => handlePaginationClick(currentPage - 1)}
+                      disabled={currentPage === 1}
                     >
-                      {index + 1}
-                    </Pagination.Item>
-                  ))}
-                  <Pagination.Next
-                    className="ml-3"
-                    onClick={() => handlePaginationClick(currentPage + 1)}
-                    disabled={currentPage === Math.ceil(selectedCategory.products.length / itemsPerPage)}
-                  >
-                    Next
-                  </Pagination.Next>
-                </Pagination>
+                      Prev
+                    </Pagination.Prev>
+                    {Array.from({ length: Math.ceil(selectedCategory.products.length / itemsPerPage) }).map((_, index) => (
+                      <Pagination.Item
+                        key={index + 1}
+                        active={index + 1 === currentPage}
+                        onClick={() => handlePaginationClick(index + 1)}
+                        className='mr-2 '
+                        style={{ borderColor: 'red' }}
+                      >
+                        {index + 1}
+                      </Pagination.Item>
+                    ))}
+                    <Pagination.Next
+                      className="ml-3"
+                      onClick={() => handlePaginationClick(currentPage + 1)}
+                      disabled={currentPage === Math.ceil(selectedCategory.products.length / itemsPerPage)}
+                    >
+                      Next
+                    </Pagination.Next>
+                  </Pagination>
 
-              </div>
-                 )}
+                </div>
+              )}
             </div>
           ) : (
             <div className="text-center">Please select a category.</div>
